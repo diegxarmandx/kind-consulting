@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --cream: #f9eee0;
+  --blush: #e0bfbc;
+  --mauve: #b49ea8;
+  --teal: #135361;
+  --sage: #738561;
+  --ink: #17343a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 10% 5%, rgba(224, 191, 188, 0.42), transparent 28rem),
+    linear-gradient(180deg, rgba(249, 238, 224, 1) 0%, rgba(249, 238, 224, 0.94) 100%);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+a,
+button {
+  touch-action: manipulation;
+}
+
+::selection {
+  background: rgba(19, 83, 97, 0.18);
+  color: var(--teal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.18em] text-sage;
+  }
+
+  .soft-card {
+    @apply rounded-[1.75rem] border border-teal/10 bg-cream/80 shadow-card backdrop-blur;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-semibold text-cream shadow-card transition duration-200 hover:bg-sage focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-teal/50 bg-cream/40 px-6 py-3 text-sm font-semibold text-teal transition duration-200 hover:bg-teal/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal;
+  }
+}

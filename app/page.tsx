@@ -75,8 +75,8 @@ export default function HomePage() {
               title={service.title}
               description={service.description}
               href={service.href}
-              image={service.image}
-              imageAspect={service.imageAspect}
+              image={images.consulting}
+              imageAspect="square"
               icon={serviceIcons[index]}
             />
           ))}
